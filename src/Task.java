@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+
+
 public class Task {
     private String taskName;
     private int taskId;
@@ -18,7 +21,7 @@ public Task(String taskName, int taskId, int taskPriority, String subject, Local
 
 
 
-public String getGetTaskName() {
+public String getTaskName() {
     return taskName;
 }
 public int getTaskId(){
@@ -66,7 +69,7 @@ public void markComplete() {
 
 @Override
 public String toString(){
-    return String.format(" completed ");
+    return taskName + " | " + subject + " | Due: " + dueDate + " | Priority: " + priority + " | Completed: " + completed;
 }
 
 

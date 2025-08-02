@@ -12,7 +12,7 @@ public class StudyPlanner {
     }
 
     public void removeTask(int index) {
-      if(index>=0 && index < tasks.length){
+      if(index>=0 && index < tasks.size()){
           tasks.remove(index);
           System.out.println(tasks + " removed from your planner!");
       } else {
@@ -34,7 +34,11 @@ public class StudyPlanner {
             System.out.println("No tasks found!");
         } else {
             for (int i=0; i<tasks.size(); i++) {
-                System.out.println(i+" "+tasks.get(i));
+                Task task = tasks.get(i);
+                System.out.println(i + ". " + task.getTaskName() + " | Due: " + task.getDueDate()
+                        + " | Subject: " + task.getSubject()
+                        + " | Priority: " + task.getTaskPriority()
+                        + " | Completed: " + task.isCompleted());
             }
         }
     }
