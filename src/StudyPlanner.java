@@ -20,5 +20,23 @@ public class StudyPlanner {
       }
     }
 
+    public void markCompleted(int index) {
+        if (index>=0 && index<tasks.size()){
+            tasks.get(index).setCompleted(true);
+            System.out.println(tasks + " marked completed!");
+        } else {
+            System.out.println("Task not found!");
+        }
+    }
+
+    public void viewTasks() {
+        if(tasks==null){
+            System.out.println("No tasks found!");
+        } else {
+            for (int i=0; i<tasks.size(); i++) {
+                System.out.println(i+" "+tasks.get(i));
+            }
+        }
+    }
 
 }
